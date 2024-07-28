@@ -22,6 +22,10 @@
                                     class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="Shift Leader">
                             </div>
+
+                            @error('title')
+                                <p class="text-xs text-red-500 font-semibold">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="sm:col-span-4">
@@ -34,9 +38,22 @@
                                     class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="$50,000 Per Year">
                             </div>
+                            @error('salary')
+                                <p class="text-xs text-red-500 font-semibold">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                 </div>
+
+                {{-- <div class="mt-10">
+                    @if ($errors->any)
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="text-red-500 italic">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div> --}}
             </div>
         </div>
 
